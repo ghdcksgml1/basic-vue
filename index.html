@@ -9,13 +9,28 @@
 </head>
 <body>
     <div id="app">
-        {{ name }}
+        <form v-on:submit.prevent="submit">
+            <input type="text"><br/>
+            <button type="submit">Submit</button>
+        </form>
     </div>
     <script>
         new Vue({
             el: '#app',
             data:{
-                name: '코지 코더'
+                year: 2018
+            },
+            methods:{
+                plus(){
+                    this.year += 1;
+                },
+                minus(){
+                    this.year -= 1;
+                },
+                submit(){
+                    alert('submitted');
+                    console.log('Hello');
+                }
             }
         })
     </script>
